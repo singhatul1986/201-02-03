@@ -1,0 +1,36 @@
+body{
+    margin: 100px;
+    background-image: url(C://workplace/assignment-02-03/img/base2.jpg);
+    color: green;
+}
+h1{
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2em;
+    color: green;
+}
+.aboutme {
+    width: 50%;
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.aboutme h3 {
+    margin-block-end: 20px;
+    margin-block-start: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.latestactivity {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: square;
+    margin-left: 12px;
+}
