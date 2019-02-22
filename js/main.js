@@ -45,7 +45,23 @@ var yesnoquestion = [
                     useranswer:'NA'
                 }
 ];
+var numericinputquestion = [
+                {
+                    keyvalue: 1,
+                    question: 'Can you guess number of countries I visited last year?',
+                    answer: 10,
+                }
 
+];
+var multipleanswequestion = [
+                {
+                    keyvalue: 1,
+                    question: 'Can you guess a country I visitied last year',
+                    answer: ['GREECE','PORTUGAL','ITALY','NA','INDIA'],
+
+                }
+
+];
 var totalcorrectanswer = 0;
 var questionCollectiom = document.getElementsByClassName("question");
 
@@ -103,4 +119,66 @@ catch(err) {
     console.log(err);
     console.log('Ops!! some error occured');
 };
+
+
+/*This section is for numeric answer check */
+
+try{
+    var numquestion = numericinputquestion[0].question;
+    var numanswer = parseInt(numericinputquestion[0].answer);
+    var randomanswer = Math.round((Math.random()*numanswer));
+    console.log(randomanswer);
+    var numquestcounter;
+    var totalatempts = 4;
+    for (numquestcounter = 1; numquestcounter <= totalatempts; numquestcounter++){
+        var usernumanswer = parseInt(prompt(numquestion));
+        console.log('I am here');
+        if (usernumanswer === randomanswer){
+            console.log('Correct Answer');
+            totalcorrectanswer = totalcorrectanswer + 1;
+            break;
+        }
+        else {
+            console.log('Please try again');
+        };
+    };
+}
+catch(err){
+
+};
+
+/*This section is for multiple answer question */
+
+try{
+    var multiansquestion = multipleanswequestion[0].question;
+    var multipleanswer = multipleanswequestion[0].answer;
+    var usermultians = prompt(multiansquestion);
+
+    /*Check for null input */
+
+    if (usermultians === null){
+        console.log('No value provided')
+    }
+    else { var formatedusrans = usermultians.toUpperCase();
+    };
+
+    /*Check if the answer is correct */
+
+    var checkanswer = multipleanswer.find(function(element)
+                        { return element === formatedusrans;
+                        });
+    if (checkanswer === isNaN){
+        console.log('Wrong Answer');
+    }
+    else {
+        console.log('correct Answer');
+        totalcorrectanswer = totalcorrectanswer + 1;
+
+    };
+    console.log(checkanswer);
+}
+catch(err){
+    console.log(err);
+}
+finally{console.log('Total number of correct answer is ' + totalcorrectanswer)};
 
